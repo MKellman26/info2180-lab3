@@ -10,18 +10,20 @@ window.onload = function(){
         sqrs[i].setAttribute('class','square');
         sqrs[i].setAttribute('id',i+1);
         sqrs[i].addEventListener('click', function(e) {
-            if (squaresFilled%2 == 0){
-                e.target.classList.add('X');
-                e.target.innerHTML = "X";
-                squaresFilled += 1;
-                xStatus.push(e.target.id);
-                AreWeDoneYet("X");
-            } else {
-                e.target.classList.add('O');
-                e.target.innerHTML = "O";
-                squaresFilled += 1;
-                oStatus.push(e.target.id);
-                AreWeDoneYet("O");
+            if (!(e.target.classList.contains("X") || e.target.classList.contains("O"))){
+                if (squaresFilled%2 == 0){
+                    e.target.classList.add('X');
+                    e.target.innerHTML = "X";
+                    squaresFilled += 1;
+                    xStatus.push(e.target.id);
+                    AreWeDoneYet("X");
+                } else {
+                    e.target.classList.add('O');
+                    e.target.innerHTML = "O";
+                    squaresFilled += 1;
+                    oStatus.push(e.target.id);
+                    AreWeDoneYet("O");
+                }
             }
         });
         sqrs[i].addEventListener('mouseover', function(e) {
