@@ -17,5 +17,13 @@ window.onload = function(){
                 status.push("O");
             }
         });
-}
+        sqrs[i].addEventListener('mouseover', function(e) {
+            if (!(e.target.classList.contains("X") || e.target.classList.contains("O"))){
+                e.target.classList.add('hover');
+            }
+        });
+        sqrs[i].addEventListener('mouseout', function(e) {
+            e.target.classList.remove('hover');
+         });
+    }
 }
