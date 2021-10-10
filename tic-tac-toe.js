@@ -34,7 +34,10 @@ window.onload = function(){
          });
     }
 
-
+    var rload= document.getElementsByClassName('btn');
+        rload[0].addEventListener('click', function() {
+        window.location.reload(true);
+    });
 
 
 
